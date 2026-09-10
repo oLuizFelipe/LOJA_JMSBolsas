@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMS Bolsas Grajaú</title>
+    <link rel="shortcut icon" href="imagens/favicon-192.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+
+        :root{
+            --preto: #141311;
+            --amarelo: #E7B60B;
+            --amarelo-claro: #F4CE3A;
+            --creme: #FBF8EF;
+            --couro: #7C4A24;
+            --texto: #2A2621;
+            --texto-suave: #6B6459;
+        }
+
+        *{ box-sizing: border-box; }
+
+        html{ scroll-behavior: smooth; }
+
+        body{
+            margin: 0;
+            background: var(--creme);
+            color: var(--texto);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3{
+            font-family: 'Baloo 2', sans-serif;
+            margin: 0;
+            color: var(--preto);
+        }
+
+        a{ color: inherit; }
+
+        .wrap{
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ---------- HEADER ---------- */
+
+        header{
+            background: var(--preto);
+            border-bottom: 6px solid var(--amarelo);
+        }
+
+        .header-inner{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 32px;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .marca{
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .marca .jms{
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 800;
+            font-size: 30px;
+            color: var(--creme);
+            letter-spacing: 1px;
+        }
+
+        .marca .bolsas{
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--amarelo);
+        }
+
+        .marca .grajau{
+            font-size: 12px;
+            color: var(--texto-suave);
+            letter-spacing: 2px;
+            align-self: flex-end;
+            margin-bottom: 3px;
+        }
+
+        nav{
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a{
+            color: var(--creme);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+            transition: border-color .2s;
+        }
+
+        nav a:hover{ border-color: var(--amarelo); }
+
+        .menu-toggle{ display: none; }
+
+        /* ---------- HERO ---------- */
+
+        .hero{
+            background: var(--preto);
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            align-items: stretch;
+        }
+
+        .hero-texto{
+            padding: 90px 32px 90px 0;
+            max-width: 480px;
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-texto p.tag{
+            color: var(--amarelo);
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 0 14px;
+        }
+
+        .hero-texto h1{
+            color: var(--creme);
+            font-size: 42px;
+            line-height: 1.15;
+        }
+
+        .hero-texto p.desc{
+            color: #BEB8AA;
+            font-size: 16px;
+            margin: 20px 0 30px;
+            max-width: 400px;
+        }
+
+        .btn{
+            display: inline-block;
+            background: var(--amarelo);
+            color: var(--preto);
+            font-weight: 600;
+            font-size: 15px;
+            padding: 14px 28px;
+            border-radius: 3px;
+            text-decoration: none;
+            width: fit-content;
+            transition: background .2s;
+        }
+
+        .btn:hover{ background: var(--amarelo-claro); }
+
+        .hero-foto{
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .hero-foto img{
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            filter: saturate(1.05);
+        }
+
+        /* ---------- VITRINE ---------- */
+
+        .vitrine{
+            padding: 90px 0 70px;
+        }
+
+        .vitrine-topo{
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .vitrine-topo h2{ font-size: 30px; }
+
+        .vitrine-topo span{
+            color: var(--texto-suave);
+            font-size: 14px;
+        }
+
+        .prateleira{
+            border-top: 3px solid var(--preto);
+            margin-top: 40px;
+        }
+
+        .produtos{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+        }
+
+        .produto{
+            display: flex;
+            gap: 24px;
+            padding: 36px 0;
+            border-bottom: 1px solid #E3DCC9;
+        }
+
+        .produto:nth-child(odd){ border-right: 1px solid #E3DCC9; padding-right: 36px; }
+        .produto:nth-child(even){ padding-left: 36px; }
+
+        .produto .foto-wrap{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .produto .foto{
+            width: 150px;
+            height: 150px;
+            flex-shrink: 0;
+            border-radius: 4px;
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .produto .foto img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .cores{
+            display: flex;
+            gap: 8px;
+        }
+
+        .cor-opcao{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            padding: 0;
+            cursor: pointer;
+            border: 2px solid transparent;
+            box-shadow: 0 0 0 1px #D8D0BC inset;
+            transition: border-color .15s;
+        }
+
+        .cor-opcao:hover{ border-color: var(--amarelo-claro); }
+
+        .cor-opcao.ativa{ border-color: var(--amarelo); }
+
+        .produto .info{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .produto .info h3{
+            font-size: 19px;
+            margin-bottom: 6px;
+        }
+
+        .produto .info .preco{
+            font-family: 'Baloo 2', sans-serif;
+            color: var(--couro);
+            font-weight: 700;
+            font-size: 18px;
+            margin: 6px 0 14px;
+        }
+
+        .produto .info a{
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--preto);
+            text-decoration: none;
+            border-bottom: 2px solid var(--amarelo);
+        }
+
+        .prateleira-fim{
+            border-top: 3px solid var(--preto);
+        }
+
+        /* ---------- SOBRE ---------- */
+
+        .sobre{
+            background: var(--preto);
+            color: var(--creme);
+            padding: 80px 0;
+        }
+
+        .sobre .wrap{
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .sobre .selo{
+            width: 130px;
+            height: 130px;
+            border: 3px solid var(--amarelo);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: 'Baloo 2', sans-serif;
+            color: var(--amarelo);
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.3;
+            padding: 10px;
+        }
+
+        .sobre h2{
+            color: var(--creme);
+            font-size: 26px;
+            margin-bottom: 16px;
+        }
+
+        .sobre p{
+            color: #C9C3B4;
+            font-size: 15px;
+            max-width: 520px;
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer{
+            background: #0C0B0A;
+            color: #C9C3B4;
+            padding: 50px 0 24px;
+        }
+
+        footer .wrap{
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3{
+            color: var(--amarelo);
+            font-size: 15px;
+            margin-bottom: 14px;
+        }
+
+        footer p, footer a{
+            font-size: 14px;
+            color: #C9C3B4;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        footer .copy{
+            text-align: center;
+            font-size: 13px;
+            color: #6B6459;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #262420;
+        }
+
+        /* ---------- RESPONSIVO ---------- */
+
+        @media (max-width: 800px){
+            .header-inner{ padding: 16px 20px; }
+            nav{ display: none; }
+            .wrap{ padding: 0 20px; }
+
+            .hero{ grid-template-columns: 1fr; }
+            .hero-texto{ margin: 0; max-width: 100%; padding: 50px 0 40px; }
+            .hero-texto h1{ font-size: 32px; }
+            .hero-foto{ height: 280px; }
+
+            .vitrine{ padding: 60px 0 40px; }
+            .produtos{ grid-template-columns: 1fr; }
+            .produto:nth-child(odd){ border-right: none; padding-right: 0; border-bottom: 1px solid #E3DCC9; }
+            .produto:nth-child(even){ padding-left: 0; }
+
+            .sobre .wrap{ grid-template-columns: 1fr; text-align: center; justify-items: center; }
+
+            footer .wrap{ grid-template-columns: 1fr; gap: 28px; text-align: center; }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="marca">
+      <span class="jms">JMS</span>
+      <span class="bolsas">Bolsas</span>
+      <span class="grajau">GRAJAÚ</span>
+    </div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#vitrine">Bolsas</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-texto">
+    <p class="tag">Loja de bolsas · Grajaú</p>
+    <h1>Bolsas que têm a cara do seu dia a dia</h1>
+    <p class="desc">Modelos elegantes e casuais, com qualidade e preço justo, direto da nossa loja para você.</p>
+    <a href="#vitrine" class="btn">Ver bolsas</a>
+  </div>
+  <div class="hero-foto">
+    <img src="imagens/jms_bolsas_logo_transparente.png" alt="Bolsa de marca JMS Bolsas">
+  </div>
+</section>
+
+<section class="vitrine" id="vitrine">
+  <div class="wrap">
+    <div class="vitrine-topo">
+      <h2>Vitrine JMS</h2>
+      <span>150 modelos em destaque</span>
+    </div>
+
+    <div class="prateleira"></div>
+    <div class="produtos">
+
+      <div class="produto">
+        <div class="foto">
+          <img src="imagens/bolsa_marca_S" alt="Bolsa de marca">
+        </div>
+        <div class="info">
+          <h3>Bolsa de marca</h3>
+          <p class="preco">R$ 99,90</p>
+          <a href="#contato">Comprar &rarr;</a>
+        </div>
+      </div>
+
+      <div class="produto">
+        <div class="foto">
+          <img src="imagens/bolsa_casual_S.png" alt="Bolsa casual">
+        </div>
+        <div class="info">
+          <h3>Bolsa Casual</h3>
+          <p class="preco">R$ 79,90</p>
+          <a href="#contato">Comprar &rarr;</a>
+        </div>
+      </div>
+
+      <div class="produto">
+        <div class="foto-wrap">
+          <div class="foto">
+            <img src="imagens/mala_preta_S.png" alt="Mala Preta" id="foto-mala">
+          </div>
+          <div class="cores" data-target="foto-mala" data-nome="nome-mala">
+            <button class="cor-opcao ativa" style="background:#141311" data-img="imagens/mala_preta_S.png" data-nome="Mala Preta" title="Preto"></button>
+            <button class="cor-opcao" style="background:#16233F" data-img="imagens/mala_azul_S.png" data-nome="Mala Azul" title="Azul escuro"></button>
+            <button class="cor-opcao" style="background:#C08974" data-img="imagens/mala_rosa_S.png" data-nome="Mala Rosa" title="Rosa"></button>
+          </div>
+        </div>
+        <div class="info">
+          <h3 id="nome-mala">Mala Preta</h3>
+          <p class="preco">R$ 310,00</p>
+          <a href="#contato">Comprar &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="prateleira prateleira-fim"></div>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="wrap">
+    <div class="selo">QUALIDADE<br>JMS<br>GRAJAÚ</div>
+    <div>
+      <h2>Sobre a JMS Bolsas Grajaú</h2>
+      <p>Somos uma loja de bairro especializada em bolsas femininas, com atendimento próximo e modelos escolhidos com cuidado para o dia a dia. Aqui você encontra desde bolsas mais elegantes até opções casuais, sempre com bom preço e qualidade.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contato">
+  <div class="wrap">
+    <div>
+      <h3>JMS Bolsas Grajaú</h3>
+      <p>Sua loja de bolsas no Grajaú.</p>
+    </div>
+    <div>
+      <h3>Contato</h3>
+      <a href="tel:+5511999999999">(11) 99999-9999</a>
+      <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:contato@jmsbolsas.com.br">contato@jmsbolsas.com.br</a>
+    </div>
+    <div>
+      <h3>Redes sociais</h3>
+      <a href="https://www.instagram.com/jmsgrajau/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+  <p class="copy">JMS Bolsas Grajaú — todos os direitos reservados.</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.cores').forEach(function(grupo){
+    var img = document.getElementById(grupo.getAttribute('data-target'));
+    var nomeEl = document.getElementById(grupo.getAttribute('data-nome'));
+    grupo.querySelectorAll('.cor-opcao').forEach(function(botao){
+      botao.addEventListener('click', function(){
+        img.src = botao.getAttribute('data-img');
+        if (nomeEl) nomeEl.textContent = botao.getAttribute('data-nome');
+        grupo.querySelectorAll('.cor-opcao').forEach(function(b){ b.classList.remove('ativa'); });
+        botao.classList.add('ativa');
+      });
+    });
+  });
+</script>
+</body>
+</html>
