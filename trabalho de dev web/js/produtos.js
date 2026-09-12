@@ -80,7 +80,7 @@ const PRODUTOS = [
     id: 'mochila-palmeiras',
     nome: 'Mochila Palmeiras',
     categoria: 'mochila',
-    preco: 150.00,
+    preco: 180.00,
     imagem: 'imagens/mochila_palmeiras_s.png',
   },
 
@@ -132,6 +132,43 @@ const PRODUTOS = [
     cores: [
       { nome: 'Mochila Stitch azul coleção', cor: '#141311', imagem: 'imagens/mochila_crianca_colecao_stitch_azul.png' },
       { nome: 'Mochila Stitch rosa coleção',  cor: '#d501fa', imagem: 'imagens/mochila_crianca_colecao_stitch_rosa.png'  },
+    ],
+  },
+
+  {
+    id: 'mochila-bob',
+    nome: 'Mochila Bob Esponja',
+    categoria: 'mochila-infantil',
+    preco: 188.27,
+    imagem: 'imagens/mochila_crianca_bob.png',
+  },
+
+  {
+    id: 'mochila-corinthians',
+    nome: 'Mochila Corinthians',
+    categoria: 'mochila',
+    preco: 180.00,
+    imagem: 'imagens/mochila_corinthians.png',
+  },
+
+  {
+    id: 'mochila-flamengo',
+    nome: 'Mochila Flamengo',
+    categoria: 'mochila',
+    preco: 180.00,
+    imagem: 'imagens/mochila_flamengo.png',
+  },
+
+   {
+    id: 'mochila-executiva',
+    nome: 'Mochila Executiva',
+    categoria: 'mochila',
+    preco: 120.00,
+    imagem: 'imagens/mochila_executiva_preta.png',
+    cores: [
+      { nome: 'Mochila Executiva Preta', cor: '#141311', imagem: 'imagens/mochila_executiva_preta.png' },
+      { nome: 'Mochila Executiva Verde',  cor: '#0f5e18ae', imagem: 'imagens/mochila_executiva_verde.png'  },
+      { nome: 'Mochila Executiva cinza',  cor: '#434343', imagem: 'imagens/mochila_executiva_cinza.png'  },
     ],
   },
 ];
