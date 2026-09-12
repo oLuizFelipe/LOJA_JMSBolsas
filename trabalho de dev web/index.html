@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JMS Bolsas Grajaú</title>
+<link rel="shortcut icon" href="imagens/favicon-192.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="marca">
+      <span class="jms">JMS</span>
+      <span class="bolsas">Bolsas</span>
+      <span class="grajau">GRAJAÚ</span>
+    </a>
+    <nav>
+      <a href="index.html#inicio" class="ativo">Início</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="index.html#sobre">Sobre</a>
+      <a href="index.html#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-texto">
+    <p class="tag">Loja de bolsas · Grajaú</p>
+    <h1>Bolsas que têm a cara do seu dia a dia</h1>
+    <p class="desc">Modelos elegantes e casuais, com qualidade e preço justo, direto da nossa loja para você.</p>
+    <a href="catalogo.html" class="btn">Ver catálogo</a>
+  </div>
+  <div class="hero-foto">
+    <img src="imagens/jms_bolsas_logo_transparente.png" alt="Logo JMS Bolsas">
+  </div>
+</section>
+
+<section class="vitrine" id="vitrine">
+  <div class="wrap">
+    <div class="vitrine-topo">
+      <h2>Destaques da loja</h2>
+      <span>Toda hora tem novidade</span>
+    </div>
+
+    <div class="prateleira"></div>
+
+    <!-- Estes produtos são preenchidos automaticamente por js/home.js,
+         puxando da lista em js/produtos.js. Não precisa editar aqui. -->
+    <div class="produtos" id="vitrine-grid"></div>
+
+    <div class="prateleira prateleira-fim"></div>
+
+    <div class="vitrine-cta">
+      <a href="catalogo.html" class="btn">Ver catálogo completo</a>
+    </div>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="wrap">
+    <div class="selo">QUALIDADE<br>JMS<br>GRAJAÚ</div>
+    <div>
+      <h2>Sobre a JMS Bolsas Grajaú</h2>
+      <p>Somos uma loja de bairro especializada em bolsas femininas, com atendimento próximo e modelos escolhidos com cuidado para o dia a dia. Aqui você encontra desde bolsas mais elegantes até opções casuais, sempre com bom preço e qualidade.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contato">
+  <div class="wrap">
+    <div>
+      <h3>JMS Bolsas Grajaú</h3>
+      <p>Sua loja de bolsas no Grajaú.</p>
+    </div>
+    <div>
+      <h3>Contato</h3>
+      <a href="tel:+5511999999999">(11) 99999-9999</a>
+      <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:contato@jmsbolsas.com.br">contato@jmsbolsas.com.br</a>
+    </div>
+    <div>
+      <h3>Redes sociais</h3>
+      <a href="https://www.instagram.com/jmsgrajau/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+  <p class="copy">JMS Bolsas Grajaú — todos os direitos reservados.</p>
+</footer>
+
+<script src="js/produtos.js"></script>
+<script src="js/produto-card.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
