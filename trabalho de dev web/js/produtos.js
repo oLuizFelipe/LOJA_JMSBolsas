@@ -34,7 +34,7 @@ const PRODUTOS = [
     nome: 'Bolsa de marca',
     categoria: 'bolsa-feminina',
     preco: 99.90,
-    imagem: 'imagens/bolsa_marca_S.png',
+    imagem: 'imagens/bolsa_marca_s.png',
   },
 
   {
@@ -42,7 +42,7 @@ const PRODUTOS = [
     nome: 'Bolsa Casual',
     categoria: 'bolsa-feminina',
     preco: 79.90,
-    imagem: 'imagens/bolsa_casual_S.png',
+    imagem: 'imagens/bolsa_casual_s.png',
   },
 
   {
@@ -50,13 +50,13 @@ const PRODUTOS = [
     nome: 'Mala Preta',
     categoria: 'mala-viagem',
     preco: 310.00,
-    imagem: 'imagens/mala_preta_S.png',
+    imagem: 'imagens/mala_preta_s.png',
     // exemplo de produto com mais de uma cor: cada entrada de "cores" vira
     // uma bolinha clicável embaixo da foto. "cor" é só a cor da bolinha.
     cores: [
-      { nome: 'Mala Preta', cor: '#141311', imagem: 'imagens/mala_preta_S.png' },
-      { nome: 'Mala Azul',  cor: '#16233F', imagem: 'imagens/mala_azul_S.png'  },
-      { nome: 'Mala Rosa',  cor: '#C08974', imagem: 'imagens/mala_rosa_S.png'  },
+      { nome: 'Mala Preta', cor: '#141311', imagem: 'imagens/mala_preta_s.png' },
+      { nome: 'Mala Azul',  cor: '#16233F', imagem: 'imagens/mala_azul_s.png'  },
+      { nome: 'Mala Rosa',  cor: '#C08974', imagem: 'imagens/mala_rosa_s.png'  },
     ],
   },
 
@@ -65,7 +65,7 @@ const PRODUTOS = [
     nome: 'Mochila Shock',
     categoria: 'mochila',
     preco: 220.00,
-    imagem: 'imagens/mochila_shock_S.png',
+    imagem: 'imagens/mochila_shock_s.png',
   },
 
   {
@@ -73,7 +73,7 @@ const PRODUTOS = [
     nome: 'Mochila Stitch',
     categoria: 'mochila-infantil',
     preco: 220.00,
-    imagem: 'imagens/mochila_stitch_S.png',
+    imagem: 'imagens/mochila_crianca_stitch.png',
   },
 
   {
@@ -81,11 +81,59 @@ const PRODUTOS = [
     nome: 'Mochila Palmeiras',
     categoria: 'mochila',
     preco: 150.00,
-    imagem: 'imagens/mochila_palmeiras_S.png',
+    imagem: 'imagens/mochila_palmeiras_s.png',
   },
 
   // ---- cole os próximos produtos aqui embaixo ----
 
+  {
+    id: 'mochila-rabisk',
+    nome: 'Mochila Rabisk',
+    categoria: 'mochila',
+    preco: 230.00,
+    imagem: 'imagens/mochila_rabisk_s.png',
+  },
+
+  {
+    id: 'mochila-juvenil',
+    nome: 'Mochila Juvenil Seanite Soccer',
+    categoria: 'mochila',
+    preco: 139.90,
+    imagem: 'imagens/mochila_juvenil_preta.png',
+    cores: [
+      { nome: 'Mochila Juvenil Seanite Soccer Preta', cor: '#141311', imagem: 'imagens/mochila_juvenil_preta.png' },
+      { nome: 'Mochila Juvenil Seanite Soccer Azul',  cor: '#3e72e3', imagem: 'imagens/mochila_juvenil_azul.png'  },
+      { nome: 'Mochila Juvenil Seanite Soccer Vermelha',  cor: '#ff0000', imagem: 'imagens/mochila_juvenil_vermelha.png'  },
+    ],
+  },
+
+  {
+    id: 'mochila-space-action',
+    nome: 'Mochila Space Action',
+    categoria: 'mochila-infantil',
+    preco: 119.61,
+    imagem: 'imagens/mochila_crianca_space_action.png',
+  },
+
+  {
+    id: 'mochila-discovery-truck',
+    nome: 'Mochila Discovery Truck',
+    categoria: 'mochila-infantil',
+    preco: 119.61,
+    imagem: 'imagens/mochila_crianca_discovery_truck.png',
+  },
+
+  {
+    id: 'mochila-colecao-stitch',
+    nome: 'Mochila Coleção Stitch',
+    categoria: 'mochila-infantil',
+    preco: 139.90,
+    imagem: 'imagens/mochila_crianca_colecao_stitch_azul.png',
+    cores: [
+      { nome: 'Mochila Stitch azul coleção', cor: '#141311', imagem: 'imagens/mochila_crianca_colecao_stitch_azul.png' },
+      { nome: 'Mochila Stitch rosa coleção',  cor: '#d501fa', imagem: 'imagens/mochila_crianca_colecao_stitch_rosa.png'  },
+    ],
+  },
 ];
 
 
