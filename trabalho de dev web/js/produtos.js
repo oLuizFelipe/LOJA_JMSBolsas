@@ -171,6 +171,19 @@ const PRODUTOS = [
       { nome: 'Mochila Executiva cinza',  cor: '#434343', imagem: 'imagens/mochila_executiva_cinza.png'  },
     ],
   },
+
+   {
+    id: 'mochila-mais-estojo',
+    nome: 'Mochila com Estojo',
+    categoria: 'mochila',
+    preco: 120.00,
+    imagem: 'imagens/mochila_com_estojo_yepp_bege.png',
+    cores: [
+      { nome: 'Mochila Com Estojo Beje', cor: '#84845a', imagem: 'imagens/mochila_com_estojo_yepp_bege.png' },
+      { nome: 'Mochila Com Estojo Preto',  cor: '#000000', imagem: 'imagens/mochila_com_estojo_yepp_preto.png'  },
+      { nome: 'Mochila Com Estojo Verde',  cor: '#4f7050', imagem: 'imagens/mochila_com_estojo_yepp_verde.png'  },
+    ],
+  },
 ];
 
 
